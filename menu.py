@@ -118,7 +118,7 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-            menu_selection = input("What item number would you like to order?")
+            menu_selection = input("What item number would you like to order? ")
             
             # 3. Check if the customer typed a number
             if menu_selection.isdigit():
@@ -131,14 +131,15 @@ while place_order:
                     item_name = menu_items[menu_selection]["Item name"]
 
                     # Ask the customer for the quantity of the menu item
-                    quanity = input(f'How many {item_name}\'s would you like? \n(The quantity will be set to 1 if you do not enter a number) ')
+                    quanity = input(f'How many {item_name}\'s would you like? \nThe quantity will be set to 1 if you do not enter a number \n')
 
                     # Check if the quantity is a number, default to 1 if not
                     if quanity.isdigit():
                         quanity = int(quanity)
+                        print(f"Quantity for {item_name} was set to {quanity}")
                     else:
                         quanity = 1
-                        
+                        print(f"Quantity for {item_name} was set to {quanity}")
 
 
                     # Add the item name, price, and quantity to the order list
@@ -217,4 +218,4 @@ print("--------------------------|--------|----------")
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 order_total = (sum(order["Price"] * int(order["Quantity"]) for order in order_list))
-print(f"Your Total: ${order_total}" )
+print(f"Total: ${order_total}" )
