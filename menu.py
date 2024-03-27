@@ -79,8 +79,7 @@ while place_order:
         i += 1
 
     # Get the customer's input
-    menu_category = input("Type menu number: ")
-    print(f'Menu Items dictionary: {menu_items}')
+    menu_category = input("Type a menu number: ")
     # Check if the customer's input is a number
     if menu_category.isdigit():
         # Check if the customer's input is a valid option
@@ -118,7 +117,7 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
-            menu_selection = input("Type menu item: ")
+            menu_selection = input("What item number would you like to order? ")
 
             # 3. Check if the customer typed a number
             if menu_selection.isdigit():
@@ -135,7 +134,7 @@ while place_order:
 
                     # Check if the quantity is a number, default to 1 if not
                     if quantity.isdigit():
-                        # print(f"You selected {quantity}")
+        
                     # Add the item name, price, and quantity to the order list
                         order_list.append({
                             "Item name": item_name,
@@ -188,7 +187,7 @@ while place_order:
 
                 # Tell the customer to try again
             case _:
-                print("Invalid input, please try again!")
+                print("Try again, please select (Y)es or (N)o")
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
@@ -212,8 +211,10 @@ for order in order_list:
     # 9. Create space strings
     item_spaces = " " * num_item_spaces
     # 10. Print the item name, price, and quantity
-    print(f"{item_name}{item_spaces}| ${price}  | {quantity}")
-
+    print(f"{item_name}{item_spaces}| ${price} | {quantity}")
+    print("--------------------------|--------|----------")
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+order_total = (sum(order["Price"] * int(order["Quantity"]) for order in order_list))
+print(f"Your Total: ${order_total}" )  
