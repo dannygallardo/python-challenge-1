@@ -5,9 +5,14 @@
 
 **Menu Order and Receipt** is a python program that takes a set of menus and
 prompts a user to make selections from those menu's multiple times until they are 
-ready to place their order and receive their and receipt with the order total.  
+ready to place their order and receive their receipt with the order total.  
 
 ## Demo
+
+
+https://github.com/dannygallardo/python-challenge-1/assets/158865403/2ef405f3-6aa7-411b-958f-1b7ebcf445c1
+
+
 
 ## Key Features
 - Iterates over a meal dictionary to print the meal menu to the user.
